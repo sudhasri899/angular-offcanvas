@@ -1,0 +1,25 @@
+  showOffcanvas = false;
+  isHidden = false;
+  progressValue = 0;
+  progressInterval: any;
+
+  startMigration() {
+    this.showOffcanvas = true;
+    this.progressValue = 0;
+
+    this.progressInterval = setInterval(() => {
+      if (this.progressValue < 100) {
+        this.progressValue += 1;
+      } else {
+        clearInterval(this.progressInterval);
+        this.showOffcanvas = false; // Hide offcanvas
+        alert('Migration process completed!'); // Show alert
+      }
+    }, 100); 
+  }
+
+
+  toggleOffcanvas() {
+    this.isHidden = !this.isHidden;
+    this.showOffcanvas = !this.showOffcanvas;
+  }

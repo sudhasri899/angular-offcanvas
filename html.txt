@@ -1,0 +1,13 @@
+<div class="container">
+       <button (click)="startMigration()" class="start-btn">Start</button> 
+       <div *ngIf="showOffcanvas" class="offcanvas">
+       <div class="progress-bar">
+       <div class="progress" [style.width.%]="progressValue"></div>
+       </div>
+     
+       <button (click)="toggleOffcanvas()" class="toggle-btn">
+        {{ isHidden ? 'Show' : 'Hide' }}
+      </button>
+    </div>
+</div>
+
